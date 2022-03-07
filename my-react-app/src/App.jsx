@@ -10,20 +10,14 @@ function App() {
     event.preventDefault();
     const userName = event.target[0].value;
 
-    let message;
-    if (!userName || userName.length < 2) {
-      message = 'Enter correct name'
-    } else {
-      message = await sendRequest(userName);
-    }
-
-    // const message = await sendRequest(userName); 
+    const message = (!userName || userName.length < 2) ? 'Enter correct name' : await sendRequest(userName);
+    
     setResultMessage(message);
   }
 
   return (
     <div className = "wrapper">
-      <form className='form' onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <Input />
         <Button />
       </form>

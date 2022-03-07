@@ -21,6 +21,6 @@ export function Button() {
 
 export function Result(props) {
     return (
-        <p className='result-window'> {props.message} </p>
+        <p className="result-window"> {props.message} </p>
     )
 }
